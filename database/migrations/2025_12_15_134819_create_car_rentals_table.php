@@ -14,24 +14,25 @@ return new class extends Migration
         Schema::create('car_rentals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('province_id')->constrained('indonesia_provinces');
-            $table->foreignId('city_id')->constrained('indonesia_cities');
-            $table->foreignId('district_id')->constrained('indonesia_districts');
-            $table->foreignId('village_id')->constrained('indonesia_villages');
+            $table->foreignId('province_code')->constrained('indonesia_provinces');
+            $table->foreignId('city_code')->constrained('indonesia_cities');
+            $table->foreignId('district_code')->constrained('indonesia_districts');
+            $table->foreignId('village_code')->constrained('indonesia_villages');
             $table->string('car_rental_name');
             $table->text('description')->nullable();
             $table->text('full_address');
             $table->text('image')->nullable();
-            $table->char('phone_number')->nullable();
-            $table->text('npwp');
+            $table->char('phone_number', 15)->nullable();
+            $table->string('npwp', 20);
+            $table->text('npwp_image');
             $table->text('latitude')->nullable();
             $table->text('longitude')->nullable();
             $table->string('open_days');
             $table->time('open_time');
             $table->time('close_time');
             $table->decimal('average_rating')->default(0);
-            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

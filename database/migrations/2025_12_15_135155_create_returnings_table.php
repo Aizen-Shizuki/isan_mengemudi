@@ -18,6 +18,11 @@ return new class extends Migration
             $table->date('return_date');
             $table->time('return_time');
             $table->text('proof_of_return');
+            $table->enum('car_condition', [
+                'SANGAT BAIK',
+                'BAIK',
+                'KURANG BAIK',
+            ]);
             $table->timestamps();
         });
     }

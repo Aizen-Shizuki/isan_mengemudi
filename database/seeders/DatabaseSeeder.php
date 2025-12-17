@@ -19,9 +19,5 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         Artisan::call('laravolt:indonesia:seed');
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }

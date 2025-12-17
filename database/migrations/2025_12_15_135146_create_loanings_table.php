@@ -28,6 +28,11 @@ return new class extends Migration
                 'REJECTED',
                 'DONE',
             ])->default('PENDING');
+            $table->enum('car_condition', [
+                'SANGAT BAIK',
+                'BAIK',
+                'KURANG BAIK',
+            ]);
             $table->timestamps();
         });
     }

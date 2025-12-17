@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('car_name');
             $table->integer('car_capacity');
             $table->integer('stock');
-            $table->text('car_image');
+            $table->text('car_image')->nullable();
             $table->enum('car_condition', [
                 'SANGAT BAIK',
                 'BAIK',
@@ -28,6 +28,7 @@ return new class extends Migration
             $table->decimal('price_per_days');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
