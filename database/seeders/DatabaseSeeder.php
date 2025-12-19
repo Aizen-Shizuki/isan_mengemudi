@@ -26,6 +26,12 @@ class DatabaseSeeder extends Seeder
             InventorySeeder::class,
             CarTypeSeeder::class,
             CarSeeder::class,
+            LoaningSeeder::class,
+            ReturningSeeder::class,
+            ChargeSeeder::class,
+            ReviewSeeder::class,
+            CartSeeder::class,
+            TransactionSeeder::class,
         ]);
     }
 }
