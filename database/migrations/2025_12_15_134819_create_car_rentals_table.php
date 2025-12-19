@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('car_rentals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('province_code')->constrained('indonesia_provinces');
-            $table->foreignId('city_code')->constrained('indonesia_cities');
-            $table->foreignId('district_code')->constrained('indonesia_districts');
-            $table->foreignId('village_code')->constrained('indonesia_villages');
+            $table->foreignId('province_id')->constrained('indonesia_provinces');
+            $table->foreignId('city_id')->constrained('indonesia_cities');
+            $table->foreignId('district_id')->constrained('indonesia_districts');
+            $table->foreignId('village_id')->constrained('indonesia_villages');
             $table->string('car_rental_name');
             $table->text('description')->nullable();
             $table->text('full_address');
