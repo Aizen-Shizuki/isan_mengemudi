@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    //
+    protected $table = 'transactions';
+    protected $fillable = [
+        'car_rental_id',
+        'cart_id',
+        'title',
+        'description',
+        'payment_method',
+        'status',
+    ];
 }

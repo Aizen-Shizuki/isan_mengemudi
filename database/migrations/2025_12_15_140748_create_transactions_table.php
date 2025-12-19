@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('car_rental_id')->constrained('car_rentals')->restrictOnDelete();
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
             $table->foreignId('cart_id')->constrained('carts')->restrictOnDelete();
+            $table->string('title');
+            $table->text('description')->nullable();
             $table->string('payment_method');
             $table->enum('status', [
                 'WAITING FOR PAYMENT',

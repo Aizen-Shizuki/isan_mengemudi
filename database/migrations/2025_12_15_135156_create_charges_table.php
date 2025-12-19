@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('charges', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('returning_id')->constrained('returnings')->restrictOnDelete();
             $table->string('charge_name');
             $table->text('description')->nullable();
             $table->text('image')->nullable();
