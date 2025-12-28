@@ -22,7 +22,7 @@ class Cart extends Model
         return $this->belongsTo(Car::class);
     }
 
-    public function cart() {
-        return $this->hasOne(Cart::class);
+    public function transaction() {
+        return $this->hasOne(Transaction::class);
     }
 }
